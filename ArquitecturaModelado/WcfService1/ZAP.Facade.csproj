@@ -68,6 +68,10 @@
       <Project>{8CF1B852-E5C2-485F-A9B9-870616331FC5}</Project>
       <Name>Zap.BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ZAP.Model\ZAP.Model.csproj">
+      <Project>{260D104D-0EA8-4127-9E36-2A7DF908A15A}</Project>
+      <Name>ZAP.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
