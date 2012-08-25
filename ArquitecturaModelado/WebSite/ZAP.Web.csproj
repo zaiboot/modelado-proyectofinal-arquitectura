@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <None Include="Properties\DataSources\ZAP.Model.AuthenticateResult.datasource" />
     <None Include="Service References\Zap.Facade.Client\Auth.disco" />
     <None Include="Service References\Zap.Facade.Client\Auth2.xsd">
       <SubType>Designer</SubType>
