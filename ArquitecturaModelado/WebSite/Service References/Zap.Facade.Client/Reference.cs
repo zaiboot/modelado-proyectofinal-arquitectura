@@ -16,7 +16,7 @@ namespace WebSite.Zap.Facade.Client {
     public interface IAuth {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAuth/Authenticate", ReplyAction="http://tempuri.org/IAuth/AuthenticateResponse")]
-        bool Authenticate(string userName, string password);
+        bool Authenticate(ZAP.Model.AuthInformationModel logonInfo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -46,8 +46,8 @@ namespace WebSite.Zap.Facade.Client {
                 base(binding, remoteAddress) {
         }
         
-        public bool Authenticate(string userName, string password) {
-            return base.Channel.Authenticate(userName, password);
+        public bool Authenticate(ZAP.Model.AuthInformationModel logonInfo) {
+            return base.Channel.Authenticate(logonInfo);
         }
     }
 }

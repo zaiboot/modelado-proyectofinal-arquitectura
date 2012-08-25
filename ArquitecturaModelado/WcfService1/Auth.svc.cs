@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using ZAP.Model;
 
 namespace Zap.Facade
 {
@@ -12,7 +13,7 @@ namespace Zap.Facade
     {
         #region IAuth Members
 
-        public bool Authenticate(string userName, string password)
+        public bool Authenticate(AuthInformationModel logonInfo)
         {
             return false;
         }

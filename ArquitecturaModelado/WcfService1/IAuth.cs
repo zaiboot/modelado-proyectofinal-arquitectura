@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using ZAP.Model;
 
 namespace Zap.Facade
 {
@@ -12,6 +13,6 @@ namespace Zap.Facade
     public interface IAuth
     {
         [OperationContract]
-        bool Authenticate(string userName, string password);
+        bool Authenticate(AuthInformationModel logonInfo);
     }
 }
