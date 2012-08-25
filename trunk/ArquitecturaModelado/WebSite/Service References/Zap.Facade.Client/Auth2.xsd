@@ -15,4 +15,29 @@
     <xs:sequence />
   </xs:complexType>
   <xs:element name="BaseModel" nillable="true" type="tns:BaseModel" />
+  <xs:complexType name="OperationResultOfAuthenticateResultQWfrpoPs">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="OperationResultOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ZAP.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AuthenticateResult" Namespace="http://schemas.datacontract.org/2004/07/ZAP.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Data" nillable="true" type="tns:AuthenticateResult" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSuccesed" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationResultOfAuthenticateResultQWfrpoPs" nillable="true" type="tns:OperationResultOfAuthenticateResultQWfrpoPs" />
+  <xs:complexType name="AuthenticateResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsLoginFine" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuthenticateResult" nillable="true" type="tns:AuthenticateResult" />
 </xs:schema>

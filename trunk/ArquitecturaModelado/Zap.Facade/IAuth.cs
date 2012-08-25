@@ -13,6 +13,6 @@ namespace Zap.Facade
     public interface IAuth
     {
         [OperationContract]
-        bool Authenticate(AuthInformationModel logonInfo);
+        OperationResult<AuthenticateResult> Authenticate(AuthInformationModel logonInfo);
     }
 }

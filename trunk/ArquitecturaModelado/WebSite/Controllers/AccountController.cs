@@ -48,7 +48,21 @@ namespace WebSite.Controllers
                     UserName = model.UserName,
                     Password = model.Password
                 };
-                if (authClient.Authenticate(logonInfo))
+                OperationResult<AuthenticateResult> opResult;
+                try
+                {
+                    opResult = authClient.Authenticate(logonInfo);
+                }
+                catch (Exception)
+                {
+                    opResult = new OperationResult<AuthenticateResult>
+                    {
+                        IsSuccesed = false,
+                        ErrorMessage = "Please try again later."
+                    };
+                }
+
+                if (opResult.IsSuccesed && opResult.Data.IsLoginFine)
                 {
                     FormsService.SignIn(model.UserName, model.RememberMe);
                     if (!String.IsNullOrEmpty(returnUrl))
@@ -63,6 +77,7 @@ namespace WebSite.Controllers
                 else
                 {
                     ModelState.AddModelError("", "The user name or password provided is incorrect.");
+                    ModelState.AddModelError("", opResult.ErrorMessage);
                 }
             }
 

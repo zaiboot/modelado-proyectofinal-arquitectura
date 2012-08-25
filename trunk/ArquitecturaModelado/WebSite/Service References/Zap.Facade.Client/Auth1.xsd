@@ -11,7 +11,7 @@
   <xs:element name="AuthenticateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="AuthenticateResult" type="xs:boolean" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ZAP.Model" minOccurs="0" name="AuthenticateResult" nillable="true" type="q2:OperationResultOfAuthenticateResultQWfrpoPs" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

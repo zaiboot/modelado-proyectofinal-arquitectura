@@ -13,9 +13,15 @@ namespace Zap.Facade
     {
         #region IAuth Members
 
-        public bool Authenticate(AuthInformationModel logonInfo)
+        public OperationResult<AuthenticateResult> Authenticate(AuthInformationModel logonInfo)
         {
-            return false;
+            BLL.Auth authBll = new BLL.Auth();
+            if (logonInfo == null)
+                  throw new ArgumentNullException("logonInfo cannot be null");
+            
+            OperationResult<AuthenticateResult> operatioResult;
+            operatioResult = authBll.Authenticate(logonInfo);
+            return operatioResult;
         }
 
         #endregion

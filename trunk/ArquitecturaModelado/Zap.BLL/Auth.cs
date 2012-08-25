@@ -9,14 +9,23 @@ namespace Zap.BLL
 {
     public class Auth : BaseBLL
     {
-        public bool Authenticate(AuthInformationModel logonInfo)
+        public OperationResult<AuthenticateResult> Authenticate(AuthInformationModel logonInfo)
         {
-            bool returnValue = false;
+
+            OperationResult<AuthenticateResult> operatioResult;
+
             AuthDAL dalAuth = new AuthDAL();
-            returnValue = dalAuth.AuthUser(logonInfo);
-            //validate date and times
-            
-            return returnValue;
+            operatioResult = dalAuth.AuthUser(logonInfo);
+            if (operatioResult.Data.IsLoginFine)
+            {
+                
+                if (DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    //No one can access the system on sundays
+                    operatioResult.Data.IsLoginFine = false;
+                }
+            }
+            return operatioResult;
 
         }
 
