@@ -21,6 +21,7 @@
     <MetadataSource Address="http://localhost:2224/Auth.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="Auth2.xsd" MetadataType="Schema" ID="e97048b2-40dc-4ac6-9d5f-aa1be7461e3d" SourceId="1" SourceUrl="http://localhost:2224/Auth.svc?xsd=xsd2" />
     <MetadataFile FileName="Auth.xsd" MetadataType="Schema" ID="790ebcbf-776a-4d47-8cb5-be087738ff4d" SourceId="1" SourceUrl="http://localhost:2224/Auth.svc?xsd=xsd1" />
     <MetadataFile FileName="Auth.disco" MetadataType="Disco" ID="62127ab3-86fd-419e-9453-47fb6bc3f422" SourceId="1" SourceUrl="http://localhost:2224/Auth.svc?disco" />
     <MetadataFile FileName="Auth1.xsd" MetadataType="Schema" ID="8b2393db-7fe9-498b-be3a-84a118aaf0d1" SourceId="1" SourceUrl="http://localhost:2224/Auth.svc?xsd=xsd0" />

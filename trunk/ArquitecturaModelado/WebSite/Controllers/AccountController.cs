@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using WebSite.Models;
+using ZAP.Model;
 
 namespace WebSite.Controllers
 {
@@ -42,7 +43,12 @@ namespace WebSite.Controllers
             if (ModelState.IsValid)
             {
                 var authClient = new Zap.Facade.Client.AuthClient();
-                if (authClient.Authenticate(model.UserName, model.Password))
+                AuthInformationModel logonInfo = new AuthInformationModel()
+                {
+                    UserName = model.UserName,
+                    Password = model.Password
+                };
+                if (authClient.Authenticate(logonInfo))
                 {
                     FormsService.SignIn(model.UserName, model.RememberMe);
                     if (!String.IsNullOrEmpty(returnUrl))
@@ -83,30 +89,6 @@ namespace WebSite.Controllers
         {
             ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
             return View();
-        }
-
-        [HttpPost]
-        public ActionResult Register(RegisterModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                // Attempt to register the user
-                MembershipCreateStatus createStatus = MembershipService.CreateUser(model.UserName, model.Password, model.Email);
-
-                if (createStatus == MembershipCreateStatus.Success)
-                {
-                    FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    ModelState.AddModelError("", AccountValidation.ErrorCodeToString(createStatus));
-                }
-            }
-
-            // If we got this far, something failed, redisplay form
-            ViewData["PasswordLength"] = MembershipService.MinPasswordLength;
-            return View(model);
         }
 
         // **************************************

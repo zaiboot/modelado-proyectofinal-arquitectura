@@ -40,7 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth.cs" />
+    <Compile Include="BaseBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZAP.DAL\ZAP.DAL.csproj">
+      <Project>{F0469CC7-4FEF-4756-8382-3BC1ACA1CEB7}</Project>
+      <Name>ZAP.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZAP.Model\ZAP.Model.csproj">
+      <Project>{260D104D-0EA8-4127-9E36-2A7DF908A15A}</Project>
+      <Name>ZAP.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
