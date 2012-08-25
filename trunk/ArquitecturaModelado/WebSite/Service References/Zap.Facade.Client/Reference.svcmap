@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a7b832fe-2a56-4dfe-b93d-3eb2ae02212a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2224/Auth.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Auth.xsd" MetadataType="Schema" ID="790ebcbf-776a-4d47-8cb5-be087738ff4d" SourceId="1" SourceUrl="http://localhost:2224/Auth.svc?xsd=xsd1" />
+    <MetadataFile FileName="Auth.disco" MetadataType="Disco" ID="62127ab3-86fd-419e-9453-47fb6bc3f422" SourceId="1" SourceUrl="http://localhost:2224/Auth.svc?disco" />
+    <MetadataFile FileName="Auth1.xsd" MetadataType="Schema" ID="8b2393db-7fe9-498b-be3a-84a118aaf0d1" SourceId="1" SourceUrl="http://localhost:2224/Auth.svc?xsd=xsd0" />
+    <MetadataFile FileName="Auth.wsdl" MetadataType="Wsdl" ID="c7756c43-2841-430b-bc60-cc8a834c86a1" SourceId="1" SourceUrl="http://localhost:2224/Auth.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZAP.Web", "WebSite\ZAP.Web.csproj", "{C4E9AA05-624E-4399-B47E-12641F6EF0DC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7E04B7D3-74A8-4063-8053-5F44188DA98F} = {7E04B7D3-74A8-4063-8053-5F44188DA98F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zap.BLL", "Zap.BLL\Zap.BLL.csproj", "{8CF1B852-E5C2-485F-A9B9-870616331FC5}"
 EndProject

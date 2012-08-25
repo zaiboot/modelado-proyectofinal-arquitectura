@@ -41,7 +41,8 @@ namespace WebSite.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (MembershipService.ValidateUser(model.UserName, model.Password))
+                var authClient = new Zap.Facade.Client.AuthClient();
+                if (authClient.Authenticate(model.UserName, model.Password))
                 {
                     FormsService.SignIn(model.UserName, model.RememberMe);
                     if (!String.IsNullOrEmpty(returnUrl))
