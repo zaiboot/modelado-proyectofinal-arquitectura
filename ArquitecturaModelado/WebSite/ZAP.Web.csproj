@@ -82,6 +82,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Properties\DataSources\ZAP.Model.AuthenticateResult.datasource" />
     <None Include="Service References\Zap.Facade.Client\Auth.disco" />
