@@ -14,16 +14,24 @@ namespace Zap.BLL
 
             OperationResult<AuthenticateResult> operatioResult;
 
-            AuthDAL dalAuth = new AuthDAL();
-            operatioResult = dalAuth.AuthUser(logonInfo);
-            if (operatioResult.Data.IsLoginFine)
+            try
+            {
+                AuthDAL dalAuth = new AuthDAL();
+                operatioResult = dalAuth.AuthUser(logonInfo);
+                if (operatioResult.Data.IsLoginFine)
+                {
+
+                    if (DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
+                    {
+                        //No one can access the system on sundays
+                        operatioResult.Data.IsLoginFine = false;
+                    }
+                }
+            }
+            catch (Exception ex)
             {
                 
-                if (DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
-                {
-                    //No one can access the system on sundays
-                    operatioResult.Data.IsLoginFine = false;
-                }
+                throw ex;
             }
             return operatioResult;
 

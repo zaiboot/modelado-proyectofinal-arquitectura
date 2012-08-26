@@ -11,7 +11,19 @@ namespace ZAP.DAL
         protected SQLiteConnection sql_con = new SQLiteConnection();
         public BaseDAL()
         {
-            sql_con.ConnectionString = "Data Source=DemoT.db;Version=3;New=False;Compress=True;";
+
+            sql_con.ConnectionString = @"Data Source=c:\database\ArqDemo.SQLite;Version=3;Compress=True;";
+//            string sqlQuery = "CREATE TABLE IF NOT EXISTS [Users](" +
+//"[ID] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+//"[UserName] NVARCHAR(100) NULL," +
+//"[Password] NVARCHAR(100) NULL" +
+//");" +
+//"   INSERT INTO [Users] ( [UserName], [Password]) VALUES ('Esteban', '123');";
+//            sql_con.Open();
+//            var sql_cmd = sql_con.CreateCommand();
+//            sql_cmd.CommandText = sqlQuery;
+//            sql_cmd.ExecuteNonQuery();
+//            sql_con.Close();
         }
     }
 }
