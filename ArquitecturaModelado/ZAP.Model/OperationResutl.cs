@@ -16,6 +16,11 @@ namespace ZAP.Model
         public bool IsSuccesed;
         public string ErrorMessage;
         public T Data { get; set; }
+
+        /// <summary>
+        /// Unique identifier for the error.
+        /// </summary>
+        public Guid Id { get; set; }
  
     }
 }
