@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZAP.Model", "ZAP.Model\ZAP.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZAP.Facade", "Zap.Facade\ZAP.Facade.csproj", "{7E04B7D3-74A8-4063-8053-5F44188DA98F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZAP.ErrorHandler", "ZAP.ErrorHandler\ZAP.ErrorHandler.csproj", "{D2780F20-C208-4D5D-B0FE-EAF959AD20BA}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -44,6 +46,10 @@ Global
 		{7E04B7D3-74A8-4063-8053-5F44188DA98F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E04B7D3-74A8-4063-8053-5F44188DA98F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E04B7D3-74A8-4063-8053-5F44188DA98F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2780F20-C208-4D5D-B0FE-EAF959AD20BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2780F20-C208-4D5D-B0FE-EAF959AD20BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2780F20-C208-4D5D-B0FE-EAF959AD20BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2780F20-C208-4D5D-B0FE-EAF959AD20BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

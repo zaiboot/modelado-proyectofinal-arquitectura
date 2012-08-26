@@ -53,13 +53,10 @@ namespace ZAP.DAL
 
                 sql_con.Close();
             }
-            //TODO: FINISH THIS
-            catch (DbException)
+            catch (DbException ex)
             {
-                operatioResult.IsSuccesed = false;
-                //TODO: Call the error component.
-                operatioResult.ErrorMessage = "Errorsito se  despicho la madre";
-                operatioResult.Data = null;
+                ZAP.ErrorHandler.ErrorHandler e = new ErrorHandler.ErrorHandler();
+                operatioResult = e.HandleError<AuthenticateResult>(ex);
 
             }
             return operatioResult;

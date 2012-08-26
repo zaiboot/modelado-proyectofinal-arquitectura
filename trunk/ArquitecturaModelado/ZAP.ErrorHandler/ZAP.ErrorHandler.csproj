@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F0469CC7-4FEF-4756-8382-3BC1ACA1CEB7}</ProjectGuid>
+    <ProjectGuid>{D2780F20-C208-4D5D-B0FE-EAF959AD20BA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ZAP.DAL</RootNamespace>
-    <AssemblyName>ZAP.DAL</AssemblyName>
+    <RootNamespace>ZAP.ErrorHandler</RootNamespace>
+    <AssemblyName>ZAP.ErrorHandler</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,10 +32,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SQLite">
-      <HintPath>..\Libs\System.Data.SQLite.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,19 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthDAL.cs" />
-    <Compile Include="BaseDAL.cs" />
+    <Compile Include="ErrorHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ZAP.ErrorHandler\ZAP.ErrorHandler.csproj">
-      <Project>{D2780F20-C208-4D5D-B0FE-EAF959AD20BA}</Project>
-      <Name>ZAP.ErrorHandler</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ZAP.Model\ZAP.Model.csproj">
       <Project>{260D104D-0EA8-4127-9E36-2A7DF908A15A}</Project>
       <Name>ZAP.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
