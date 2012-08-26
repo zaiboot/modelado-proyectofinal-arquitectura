@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<System.Web.Mvc.HandleErrorInfo>" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<ZAP.Model.OperationResult<ZAP.Model.BaseModel>>" %>
 
 <asp:Content ID="errorTitle" ContentPlaceHolderID="TitleContent" runat="server">
     Error
@@ -8,5 +8,10 @@
     <h2>
         Sorry, an error occurred while processing your request.
     </h2>
-
+    <p>
+<%= this.Model.ErrorMessage %>
+</p>
+<p>
+    The report id is: <%= this.Model.Id %>.
+</p>
 </asp:Content>

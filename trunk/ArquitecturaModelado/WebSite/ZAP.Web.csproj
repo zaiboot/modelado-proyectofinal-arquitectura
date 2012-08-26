@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -119,6 +120,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ZAP.ErrorHandler\ZAP.ErrorHandler.csproj">
+      <Project>{D2780F20-C208-4D5D-B0FE-EAF959AD20BA}</Project>
+      <Name>ZAP.ErrorHandler</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZAP.Model\ZAP.Model.csproj">
       <Project>{260D104D-0EA8-4127-9E36-2A7DF908A15A}</Project>
       <Name>ZAP.Model</Name>

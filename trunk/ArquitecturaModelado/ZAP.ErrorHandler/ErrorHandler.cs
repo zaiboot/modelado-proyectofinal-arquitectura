@@ -113,7 +113,8 @@ namespace ZAP.ErrorHandler
             {
                 throw new System.ApplicationException("Unexpeceted error by creating the file: " + errorFilePath, ex);
             }
-
+            writerLogger.Flush();
+            writerLogger.Close();
 
             return errorResult;
         }

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using ZAP.Model;
+using ZAP.ErrorHandler;
 
 namespace WebSite
 {
@@ -24,11 +26,29 @@ namespace WebSite
 
         }
 
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
 
             RegisterRoutes(RouteTable.Routes);
+        }
+        /// <summary>
+        /// Used for processing unhandled errors on the mvc layer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception error = Server.GetLastError();
+            Response.Clear();
+            Server.ClearError();
+
+            string path = Request.Path;
+            ErrorHandler eHandler = new ErrorHandler();
+            var errorData = eHandler.HandleError<BaseModel>(error);
+            Session["errorData"] = errorData;
+            Response.Redirect("~/Error");
         }
     }
 }
