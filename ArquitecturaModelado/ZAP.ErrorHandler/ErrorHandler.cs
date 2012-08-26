@@ -75,7 +75,8 @@ namespace ZAP.ErrorHandler
 
             try
             {
-                writerLogger = new StreamWriter(errorFilePath);
+                writerLogger = File.AppendText(errorFilePath);
+
 
             }
             catch (SecurityException ex)
@@ -101,7 +102,8 @@ namespace ZAP.ErrorHandler
             }
 
             try
-            {
+            {             
+                
                 writerLogger.WriteLine(strBuilder.ToString());
             }
             catch (IOException ex)
