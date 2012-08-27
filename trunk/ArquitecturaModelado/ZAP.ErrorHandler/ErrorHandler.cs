@@ -4,6 +4,8 @@ using System.Configuration;
 using System.Text;
 using System.IO;
 using System.Security;
+using System.Net;
+using System.Net.Mail;
 
 namespace ZAP.ErrorHandler
 {
@@ -70,13 +72,38 @@ namespace ZAP.ErrorHandler
             //TODO: Log the error.
             StringBuilder strBuilder = new StringBuilder();
             strBuilder.AppendFormat("{0} - {1} - \n{2} ", errorResult.Id, DateTime.Now, exceptionToHandle.ToString());
-            //TODO: Email the error. Esteban will do this.
-            StreamWriter writerLogger = null;
 
+            //TODO: Email the error. Esteban will do this.
+            // Test email gmail... user: mailtestesteban@gmail.com pass:esteban123
+            #region Sending Email
+            var fromAddress = new MailAddress("mailtestesteban@gmail.com");
+            var toAddress = new MailAddress("estlopacu@hotmail.com");
+            const string fromPassword = "esteban123";
+            const string subject = "Error in ZAP Application";
+            string body = "An error has just occurred in one ZAP Application, please refer to the error file for more details.\n\nError id: " + errorResult.Id + "\n\nGood Luck!!!";
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            };
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                Body = body
+            })
+            {
+                smtp.Send(message);
+            }
+            #endregion
+            StreamWriter writerLogger = null;
             try
             {
                 writerLogger = File.AppendText(errorFilePath);
-
 
             }
             catch (SecurityException ex)
